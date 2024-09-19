@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { ThemeProvider } from "./components/theme-provider";
-import { cn } from "@/lib/utils";
+
 import "./globals.css";
-import { ModeToggle } from "./components/mode-toggle";
+import { Providers } from "./provider";
+import { Header } from "./header";
+
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,20 +31,13 @@ export default function RootLayout({
   return (
     <>
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-        )}>
-      <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <div>
-        <ModeToggle/>
-        </div>
-      {children}
-    </ThemeProvider>
+      <body className=
+          "min-h-screen bg-background font-sans antialiased"
+        >
+       <Providers>
+          <Header />
+          <div className="container mx-auto">{children}</div>
+        </Providers>
       </body>
     </html>
     </>

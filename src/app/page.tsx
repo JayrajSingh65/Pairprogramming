@@ -1,7 +1,19 @@
 import Image from "next/image";
+import { db } from "../db";
+import { Item } from "@radix-ui/react-dropdown-menu";
 
-export default function Home() {
+
+export default async function Home() {
+  const items = await db.query.testing.findMany();
   return (
-    <div>hello</div>
+    <main>
+      {items.map((item) => {
+      return <div key={item.id}>
+        {item.name}
+
+      </div>
+})}
+    </main>
+    
   );
 }
