@@ -8,7 +8,7 @@ export default async function Home() {
     <main>
       {rooms.map((room) => {
         return <div key={room.id}>
-          {room.name}
+          {}
 
         </div>
       })}
