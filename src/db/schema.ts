@@ -112,6 +112,7 @@ export const testing = pgTable("testing", {
     name: text("name").notNull(),
     language: text("language").notNull(),
     githubrepo: text("githubrepo"),
+    description: text("description")
 
 
   });

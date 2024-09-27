@@ -19,8 +19,8 @@ import { useRouter } from "next/navigation";
  
 const formSchema = z.object({
   name: z.string().min(2).max(50),
-  description: z.string().min(2).max(50),
-  githubrepo: z.string().min(2).max(50),
+  description: z.string().min(2).max(250),
+  githubrepo: z.string().min(2).max(250),
   language: z.string().min(2).max(50)
 })
 export function CreateRoomForm() {
