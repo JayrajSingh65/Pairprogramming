@@ -120,7 +120,7 @@ import {
                   Browse
                 </Link>
   
-                <Link className="hover:underline" href="/your-rooms">
+                <Link className="hover:underline" href="/yours-room">
                   Your Rooms
                 </Link>
               </>

@@ -59,6 +59,7 @@ export function DevFinderVideo({ room }: { room: Room }) {
       <StreamVideo client={client}>
         <StreamTheme>
           <StreamCall call={call}>
+            
             <SpeakerLayout />
             <CallControls
               onLeave={() => {
