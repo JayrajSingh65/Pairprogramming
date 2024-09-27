@@ -110,7 +110,7 @@ export const testing = pgTable("testing", {
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
     name: text("name").notNull(),
-    language: text("language").notNull(),
+    tags: text("tags").notNull(),
     githubrepo: text("githubrepo"),
     description: text("description")
 

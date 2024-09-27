@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { db } from "../db";
+import { splitTags } from "../../lib/utils";
 import Link from "next/link";
 import {
   Card,
@@ -13,6 +14,7 @@ import {
 import { Room } from "@/db/schema";
 import { GithubIcon } from "lucide-react";
 import { getRooms } from "@/data-access/rooms";
+import { TagList } from "./components/tags-list";
 
 
 function RoomCard({room}: {room: Room}) {
@@ -20,13 +22,13 @@ function RoomCard({room}: {room: Room}) {
     <Card className="flex flex-col">
   <CardHeader>
     <CardTitle>{room.name}</CardTitle>
-    <CardDescription className="block mb-2">{room.description}</CardDescription>
+    <CardDescription className="text-blue-200">{room.description}</CardDescription>
   </CardHeader>
   <CardContent>
   {room.githubrepo && (
           <Link
             href={room.githubrepo}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 mb-4"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -34,6 +36,7 @@ function RoomCard({room}: {room: Room}) {
             Github Project
           </Link>
         )}
+  <TagList tags={splitTags(room.tags)} />
   </CardContent>
   <CardFooter className="mt-auto">
   <Button asChild>

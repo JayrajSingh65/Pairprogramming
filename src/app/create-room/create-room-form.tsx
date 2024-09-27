@@ -21,7 +21,7 @@ const formSchema = z.object({
   name: z.string().min(2).max(50),
   description: z.string().min(2).max(250),
   githubrepo: z.string().min(2).max(250),
-  language: z.string().min(2).max(50)
+  tags: z.string().min(2).max(50)
 })
 export function CreateRoomForm() {
   const router = useRouter();
@@ -31,7 +31,7 @@ export function CreateRoomForm() {
           name: "",
           description: "",
           githubrepo: "",
-          language: "",
+          tags: "",
         },
       })
 
@@ -96,12 +96,12 @@ export function CreateRoomForm() {
 
 <FormField
           control={form.control}
-          name="language"
+          name="tags"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Programming language</FormLabel>
+              <FormLabel>Tags</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} placeholder="typescript, tailwind, nextjs"/>
               </FormControl>
               <FormDescription>
                 List the programming language you working on
