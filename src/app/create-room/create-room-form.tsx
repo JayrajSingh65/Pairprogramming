@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input"
 import { createRoomAction } from "./actions"
 import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast"
-import {  room } from "@/db/schema"
+// import {  room } from "@/db/schema"
  
 const formSchema = z.object({
   name: z.string().min(2).max(50),
@@ -77,7 +77,7 @@ export function CreateRoomForm() {
                 <Input {...field} />
               </FormControl>
               <FormDescription>
-                Please describe what you'll be coding
+                Please describe what youll be coding
               </FormDescription>
               <FormMessage />
             </FormItem>

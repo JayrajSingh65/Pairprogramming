@@ -1,7 +1,7 @@
 
 import { getRoom } from "@/data-access/rooms";
 import { TagList } from "@/app/components/tags-list";
-import { GithubIcon, Tags } from "lucide-react";
+import { GithubIcon } from "lucide-react";
 import { splitTags } from "../../../../lib/utils";
 import Link from "next/link";
 import { unstable_noStore } from "next/cache";
